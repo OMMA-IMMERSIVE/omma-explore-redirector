@@ -1,7 +1,6 @@
 [edge_functions]
-  directory = "netlify/edge-functions"
+directory = "netlify/edge-functions"
 
-# Mount the router on everything (or narrow it to only what you use)
 [[edge_functions.mounts]]
-  function = "router"
-  path = "/*"
+function = "router"
+path = "/*"
