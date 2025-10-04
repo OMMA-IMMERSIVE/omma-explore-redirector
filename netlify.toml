@@ -1,6 +1,6 @@
-[edge_functions]
-directory = "netlify/edge-functions"
-
-[[edge_functions.mounts]]
-function = "router"
+[[edge_functions]]
 path = "/*"
+function = "router"
+
+[edge_functions_settings]
+directory = "netlify/edge-functions"
