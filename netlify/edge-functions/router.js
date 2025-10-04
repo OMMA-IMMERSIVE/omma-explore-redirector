@@ -18,8 +18,8 @@ export default async (request, context) => {
     const rest = path.slice("/models/".length); // keep subfolders like silo2/...
     return proxy(MODELS_SITE + rest + url.search, request);
   }
-  if (path.startsWith("/stonefieldofficeviewer/")) {
-    const rest = path.slice("/stonefieldofficeviewer/".length);
+  if (path.startsWith("/StonefieldOfficeViewer/")) {
+    const rest = path.slice("/StonefieldOfficeViewer/".length);
     return proxy(OFFICE_SITE + rest + url.search, request);
   }
 
