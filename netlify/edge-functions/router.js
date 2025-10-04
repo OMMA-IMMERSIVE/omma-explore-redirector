@@ -9,9 +9,9 @@ export default async (request, context) => {
       strip: "/models/"
     },
     {
-      prefix: "/stonefieldOfficeViewer/",
+      prefix: "/StonefieldOfficeViewer/",
       targetBase: "https://omma-stonefieldofficeviewer.netlify.app/",
-      strip: "/stonefieldOfficeViewer/"
+      strip: "/StonefieldOfficeViewer/"
     }
   ];
 
