@@ -22,7 +22,8 @@ export default async (request, context) => {
     return Response.redirect(`${url.origin}/sStonefieldOfficeViewer/`, 301);
   }
 
-  if (path === "/historicvillageatallaire" || path === "/historicvillageatallaire/") {
+  // Only redirect when the trailing slash is missing to avoid a redirect loop
+  if (path === "/historicvillageatallaire") {
     return Response.redirect(`${url.origin}/historicvillageatallaire/`, 301);
   }
 
