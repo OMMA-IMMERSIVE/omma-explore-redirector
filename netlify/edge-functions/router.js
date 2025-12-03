@@ -1,5 +1,6 @@
 const MODELS_SITE = "https://omma-models.netlify.app/";
 const OFFICE_SITE = "https://omma-stonefieldofficeviewer.netlify.app/";
+const HISTORICVILLAGE_SITE = "https://historicvillageatallaire.netlify.app/";
 
 const ABS_ASSET_RE = /^\/(?:(?:lib|media|assets|static|scripts?|js|css|img|images)\/|.+\.(?:bin|wasm|data|mp3|mp4|webm|json|glb|gltf|jpg|jpeg|png|gif|svg|ico))$/i;
 
@@ -21,6 +22,10 @@ export default async (request, context) => {
     return Response.redirect(`${url.origin}/sStonefieldOfficeViewer/`, 301);
   }
 
+  if (path === "/historicvillageatallaire" || path === "/historicvillageatallaire/") {
+    return Response.redirect(`${url.origin}/historicvillageatallaire/`, 301);
+  }
+
   // 1) Direct mounts
   if (path.startsWith("/models/")) {
     const rest = path.slice("/models/".length);
@@ -29,6 +34,10 @@ export default async (request, context) => {
   if (path.startsWith("/StonefieldOfficeViewer/")) {
     const rest = path.slice("/StonefieldOfficeViewer/".length);
     return proxy(OFFICE_SITE + rest + url.search, request);
+  }
+  if (path.startsWith("/historicvillageatallaire/")) {
+    const rest = path.slice("/historicvillageatallaire/".length);
+    return proxy(HISTORICVILLAGE_SITE + rest + url.search, request);
   }
 
   // 2) Asset catch for absolute URLs used by pages under /models/
