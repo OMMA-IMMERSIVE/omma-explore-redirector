@@ -44,6 +44,10 @@ export default async (request, context) => {
     const rest = path.slice("/historicvillageatallaire/".length);
     return proxy(HISTORICVILLAGE_SITE + rest + url.search, request);
   }
+    if (path.startsWith("/williamscenter360/")) {
+    const rest = path.slice("/williamscenter360/".length);
+    return proxy(WILLIAMSCENTER_SITE + rest + url.search, request);
+  }
 
   // 2) Asset catch for absolute URLs used by pages under /models/
   if (ABS_ASSET_RE.test(path) && referer.includes("/models/")) {
