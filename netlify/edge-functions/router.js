@@ -19,12 +19,16 @@ export default async (request, context) => {
   }
 
   if (path === "/StonefieldOfficeViewer") {
-    return Response.redirect(`${url.origin}/sStonefieldOfficeViewer/`, 301);
+    return Response.redirect(`${url.origin}/StonefieldOfficeViewer/`, 301);
   }
 
   // Only redirect when the trailing slash is missing to avoid a redirect loop
   if (path === "/historicvillageatallaire") {
     return Response.redirect(`${url.origin}/historicvillageatallaire/`, 301);
+  }
+
+  if (path === "/williamscenter360") {
+    return Response.redirect(`${url.origin}/williamscenter360/`, 301);
   }
 
   // 1) Direct mounts
