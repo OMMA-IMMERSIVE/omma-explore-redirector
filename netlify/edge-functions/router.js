@@ -1,6 +1,7 @@
 const MODELS_SITE = "https://omma-models.netlify.app/";
 const OFFICE_SITE = "https://omma-stonefieldofficeviewer.netlify.app/";
 const HISTORICVILLAGE_SITE = "https://historicvillageatallaire.netlify.app/";
+const WILLIAMSCENTER_SITE = "https://williamscenter360.netlify.app/";
 
 const ABS_ASSET_RE = /^\/(?:(?:lib|media|assets|static|scripts?|js|css|img|images)\/|.+\.(?:bin|wasm|data|mp3|mp4|webm|json|glb|gltf|jpg|jpeg|png|gif|svg|ico))$/i;
 
