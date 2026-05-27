@@ -2,6 +2,7 @@ const MODELS_SITE = "https://omma-models.netlify.app/";
 const OFFICE_SITE = "https://omma-stonefieldofficeviewer.netlify.app/";
 const HISTORICVILLAGE_SITE = "https://historicvillageatallaire.netlify.app/";
 const WILLIAMSCENTER_SITE = "https://williamscenter360.netlify.app/";
+const WILLIAMSCENTER_INTERNAL_SITE = "https://williamscenter360internal.netlify.app/";
 
 const ABS_ASSET_RE = /^\/(?:(?:lib|media|assets|static|scripts?|js|css|img|images)\/|.+\.(?:bin|wasm|data|mp3|mp4|webm|json|glb|gltf|jpg|jpeg|png|gif|svg|ico))$/i;
 
@@ -32,6 +33,10 @@ export default async (request, context) => {
     return Response.redirect(`${url.origin}/williamscenter360/`, 301);
   }
 
+    if (path === "/williamscenter360internal") {
+    return Response.redirect(`${url.origin}/williamscenter360internal/`, 301);
+  }
+
   // 1) Direct mounts
   if (path.startsWith("/models/")) {
     const rest = path.slice("/models/".length);
@@ -48,6 +53,10 @@ export default async (request, context) => {
     if (path.startsWith("/williamscenter360/")) {
     const rest = path.slice("/williamscenter360/".length);
     return proxy(WILLIAMSCENTER_SITE + rest + url.search, request);
+  }
+  if (path.startsWith("/williamscenter360internal/")) {
+    const rest = path.slice("/williamscenter360internal/".length);
+    return proxy(WILLIAMSCENTER_INTERNAL_SITE + rest + url.search, request);
   }
 
   // 2) Asset catch for absolute URLs used by pages under /models/
